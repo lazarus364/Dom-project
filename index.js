@@ -22,6 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.toggle('purchased');
             item.classList.remove('selected');
             item.dataset.purchased = 'true';
+
+            if (item.dataset.purchased === 'true' && !item.querySelector('.checkmark')) {
+                const checkmark = document.createElement('span');
+                checkmark.textContent = ' ✔'; 
+                checkmark.className = 'checkmark'; 
+                item.appendChild(checkmark);
+            }
+
         });
     };
 
